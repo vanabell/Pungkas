@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>
+<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jPages.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("div.holder").jPages({
+        containerID  : "itemContainer",
+        perPage      : 5,
+        previous: "Previous",
+        next: "Next"
+      });
+});
+</script>
+<style type="text/css">
+	#link-read{
+		text-decoration: none;
+		font-style: italic;
+	}
+	#link-read:hover{
+		color: blue;
+	}
+  td, th{
+    width: 20%;
+    font-size: 18px;
+  }
+  td a{
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 16px;
+
+  }
+  thead tr{
+    background-color: grey;
+  }
+  table{
+    border: 1px solid black;
+  }
+  tbody td{
+    text-align: center;
+  }
+  #pagination{
+    margin-left: 33%;
+  }
+  /*Pagination*/
+.holder {
+  margin:15px 0;
+}
+.holder a {
+  font-size:12px;
+  cursor:pointer;
+  margin:0 5px;
+  color:#333;
+}
+.holder a:hover {
+  background-color:#222;
+  color:#fff;
+}
+.holder a.jp-previous {
+  margin-right:15px;
+}
+.holder a.jp-next {
+  margin-left:15px;
+}
+.holder a.jp-current,a.jp-current:hover {
+  color:#FF4242;
+  font-weight:bold;
+}
+.holder a.jp-disabled,a.jp-disabled:hover {
+  color:#bbb;
+}
+.holder a.jp-current,a.jp-current:hover,.holder a.jp-disabled,a.jp-disabled:hover {
+  cursor:default;
+  background:none;
+}
+.holder span {
+  margin: 0 5px;
+}
+.arrowPrev,.arrowNext {
+  width:29px;
+  height:29px;
+  position:absolute;
+  top:55px;
+  cursor:pointer;
+}
+.arrowPrev {
+  background: url('../img/arrow_left.png') no-repeat;
+}
+.arrowNext {
+  background: url('../img/arrow_right.png') no-repeat;
+}
+
+</style>
+  <h3><b>AGENDA WARGA ALAM CITRA</b></h3>
+  </br>
+  <table>
+	 <thead>
+	 	<tr>
+	 		<th>Nama Laporan</th>
+	 		<th>Bulan</th>
+      <th>Tahun</th>
+	 		<th>Aksi</th>
+	 	</tr>
+	 </thead>
+   
+ 	 <tbody id="itemContainer">
+  		<?php for($a=0;$a<count($this->data);$a++){
+  			$b=$a+1;
+  		?>
+  		<tr>
+  			<td><?php echo $this->data[$a]['lap_name']?></td>
+  			<td><?php echo $this->data[$a]['lap_bulan']?></td>
+  			<td><?php echo $this->data[$a]['lap_tahun']?></td>
+  			<td><a href="<?php echo $this->baseUrl();?>/laporan/detail/p/<?php echo $this->data[$a]['lap_id']?>">detail</a></td>
+  		</tr>
+  		<?php }?>
+  		</tbody>
+  </table>
+  <div id="pagination">
+    <div class="holder"></div>
+  </div> 
+</html>

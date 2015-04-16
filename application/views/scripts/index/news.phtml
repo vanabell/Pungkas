@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+<style type="text/css">
+  #link-read{
+    text-decoration: none;
+    font-style: italic;
+  }
+  #link-read:hover{
+    color: blue;
+  }
+  .framming{
+    max-width: 280px;
+    /*max-height: 400px;*/
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 3px;
+  }
+  .framming img{
+    width: 100%;
+   /*margin: -75px 0 0 -100px;*/
+ }
+ .new{
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+ }
+</style>
+<div class="new">
+  <h1><?php echo $this->data[0]['news_title']?></h1>
+  <div class="framming">
+   <?php if($this->data[0]['news_image']!=null){?>
+      <img src="<?php echo $this->baseUrl();?>/img/news/<?php echo $this->data[0]['news_image']?>">
+    <?php } ?>
+  </div> 
+  <?php 
+    echo $this->data[0]['news_detail']
+  ?>
+</div>
+</html>

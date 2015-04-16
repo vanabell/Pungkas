@@ -1,0 +1,90 @@
+<html>
+<script type="text/javascript">
+$(function() {
+    $( "#tgl-agenda" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
+});
+</script>
+<?php if($this->det!=null){?>
+<div class="panel panel-info">
+<div class="panel-heading"><i class="glyphicon glyphicon-dashboard"></i><b>EDIT Adart</b></center></div>
+</br>
+<form class="form-horizontal" role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<?php 
+		if($this->message!=''){ ?>
+			<div class="alert alert-danger"><?php echo $this->message;?></div>
+	<?php 
+		}
+	?>
+	<?php 
+		if($this->msg!=''){ ?>
+			<div class="alert alert-success"><?php echo $this->msg;?></div>
+	<?php 
+		}
+	?>
+<div style="width:800px;margin-left: auto;margin-right: auto;text-align: left;">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Adart Detail</label>
+     <div class="col-sm-10">
+     	<textarea id="tos" name="tos"><?php echo $this->det[0]['adart_detail'];?></textarea>
+						<script type="text/javascript">
+							CKEDITOR.replace( 'tos',  {
+	allowedContent: true
+} );
+						</script>
+    </div>
+    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $this->det[0]['adart_id'];?>">
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Save</button>
+    </div>
+  </div>
+</div>
+</form>
+<?php } else {?>
+<html>
+<script type="text/javascript">
+$(function() {
+    $( "#tgl-agenda" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
+});
+</script>
+<div class="panel panel-info">
+<div class="panel-heading"><i class="glyphicon glyphicon-dashboard"></i><b>EDIT Adart</b></center></div>
+</br>
+<form class="form-horizontal" role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<?php 
+		if($this->message!=''){ ?>
+			<div class="alert alert-danger"><?php echo $this->message;?></div>
+	<?php 
+		}
+	?>
+	<?php 
+		if($this->msg!=''){ ?>
+			<div class="alert alert-success"><?php echo $this->msg;?></div>
+	<?php 
+		}
+	?>
+<div style="width:800px;margin-left: auto;margin-right: auto;text-align: left;">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Adart Detail</label>
+     <div class="col-sm-10">
+     	<textarea id="tos" name="tos"></textarea>
+						<script type="text/javascript">
+							CKEDITOR.replace( 'tos',  {
+	allowedContent: true
+} );
+						</script>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Save</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</html>
+<?php }?>
+</div>
+</html>

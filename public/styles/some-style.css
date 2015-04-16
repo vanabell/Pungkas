@@ -1,0 +1,92 @@
+@CHARSET "ISO-8859-1";
+body{
+margin:0;
+padding:0;
+line-height: 1.5em;
+}
+
+b{font-size: 110%;}
+em{color: red;}
+
+#maincontainer{
+width: 1024px; /*Width of main container*/
+margin: 0 auto; /*Center container on page*/
+}
+
+#topsection{
+background: #FFF;
+height: 90px; /*Height of top section*/
+text-align:center;
+border-bottom: 1px solid #000;
+border-top: 1px solid #000;
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin-right: 370px; /*Margin for content column. Should be (RightColumnWidth + LeftColumnWidth)*/
+}
+
+#leftcolumn{
+float: left;
+width: 180px; /*Width of left column in pixel*/
+margin-left: -370px; /*Set margin to -(LeftColumnWidth + RightColumnWidth)*/
+/* background: #C8FC98; */
+}
+
+
+#rightcolumn{
+float: left;
+width: 190px; /*Width of right column in pixels*/
+margin-left: -190px; /*Set margin to -RightColumnWidth*/
+/* background: #FDE95E; */
+}
+
+#footer{
+clear: left;
+width: auto;
+background: white;
+text-align: center;
+padding: 4px 0;
+border-bottom: 1px solid #000;
+border-top: 1px solid #000;
+}
+
+#footer a{
+color: #000;
+}
+
+#maincontainer a{
+color: #000;
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+
+.dashes {
+	position: relative;;
+	display: inline-block;
+	height: 1px;
+	width: 75%;
+	background-color: #000;
+	border-bottom: 1px solid #000;
+	vertical-align: middle;
+	margin-bottom: 1px;
+	
+}
+
+.justify{
+	text-align: justify;
+	text-justify: inter-word;
+}
+

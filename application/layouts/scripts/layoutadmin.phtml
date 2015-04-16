@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    
+  <link href="<?php echo $this->baseUrl();?>/javascript/chosen/chosen.min.css" media="screen" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link href="<?php  echo $this->baseUrl();?>/styles/todc/css/bootstrap.min.css" rel="stylesheet">
+    <!-- TODC Bootstrap theme -->
+    <link href="<?php  echo $this->baseUrl();?>/styles/todc/css/todc-bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="<?php  echo $this->baseUrl();?>/themes/suppli/js/html5shiv.js"></script>
+      <script src="<?php  echo $this->baseUrl();?>/themes/supplier/js/respond.min.js"></script>
+    <![endif]-->
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <script src="<?php  echo $this->baseUrl();?>/styles/todc/js/jquery1-11-0.min.js"></script>
+    <script src="<?php  echo $this->baseUrl();?>/styles/todc/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/javascript/chosen/chosen.jquery.min.js"></script>
+  	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jquery-ui.js"></script>
+  	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/jquery-ui.css" media="all" />
+	<script src="<?php  echo $this->baseUrl();?>/ckeditor/ckeditor.js"></script>
+  	<link href="<?php echo $this->baseUrl();?>/fontawesome/css/font-awesome.css" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/tabel-sorter.css" media="all" />
+  	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/colorpickerfix/jscolor.js"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jPages.js"></script>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".dropdown1").hover(function(){
+      $(this).addClass("open");
+    },function(){
+      $(this).removeClass("open");
+    });
+  });
+  </script>
+  </head>
+  <body>
+  <?php 
+    $session_editor=new Zend_Session_Namespace('session_admin');
+  ?>
+   <nav class="navbar navbar-masthead navbar-inverse navbar-fixed-top" role="navigation" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bs-example-masthead-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse bs-example-masthead-collapse-1">
+      <ul class="nav navbar-nav">
+       <li><a href="<?php echo $this->baseUrl()?>/admin/admin/index"><i class="glyphicon glyphicon-dashboard"></i>&nbsp;Dashboard</a></li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/admin/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Admin</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/admin/add">Add New Admin</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/news/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;News</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/news/add">Add New News</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/iklan/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Iklan</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/iklan/add">Add New Iklan</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/agenda/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Agenda</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/agenda/add">Add New Agenda</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/laporan/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Laporan Keuangan</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/laporan/add">Add New Laporan Keuangan</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/galeri/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Galeri</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/galeri/add">Add New Galeri</a></li>
+          </ul>
+        </li>
+        <li class="dropdown1">
+          <a href="<?php echo $this->baseUrl()?>/admin/agenda/index" class="dropdown-toggle1"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Top & Sidebar Menu</a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl()?>/admin/struktur/edit">Struktur</a></li>
+            <li><a href="<?php echo $this->baseUrl()?>/admin/welcome/edit">Welcoming Address</a></li>
+            <li><a href="<?php echo $this->baseUrl()?>/admin/adart/edit">Ad / Art</a></li>
+            <li><a href="<?php echo $this->baseUrl()?>/admin/about/edit">About Us</a></li>
+          </ul>
+        </li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;
+            Welcome, 
+            <?php 
+              echo $session_editor->user_id;
+            ?>
+          <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $this->baseUrl();?>/admin/loginadmin/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   <div style="padding: 50px 10px 10px 10px">
+    <?php  echo $this->layout()->content;?>
+   </div>
+   
+  </body>
+</html>

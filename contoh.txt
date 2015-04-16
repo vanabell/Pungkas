@@ -1,0 +1,61 @@
+Welcome to Git (version 1.9.5-preview20150319)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+
+Adyaksa Pungkas@PUNGKAS ~
+$ E:
+sh.exe": E:: command not found
+
+Adyaksa Pungkas@PUNGKAS ~
+$ cd e:
+
+Adyaksa Pungkas@PUNGKAS /e
+$ mkdir skripsiproject
+
+Adyaksa Pungkas@PUNGKAS /e
+$ cd skripsiproject/
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject
+$ git clone https://github.com/Pungkasdansewelas/Pungkas.git
+Cloning into 'Pungkas'...
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+Checking connectivity... done.
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject
+$ cd Pungkas/
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (master)
+$ git -b develop
+Unknown option: -b
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (master)
+$ git checkout -b develop
+Switched to a new branch 'develop'
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (develop)
+$ git remote -v
+origin  https://github.com/Pungkasdansewelas/Pungkas.git (fetch)
+origin  https://github.com/Pungkasdansewelas/Pungkas.git (push)
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (develop)
+$ git remote add skripsi https://github.com/vanabell/Pungkas.git
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (develop)
+$ git remote -v
+origin  https://github.com/Pungkasdansewelas/Pungkas.git (fetch)
+origin  https://github.com/Pungkasdansewelas/Pungkas.git (push)
+skripsi https://github.com/vanabell/Pungkas.git (fetch)
+skripsi https://github.com/vanabell/Pungkas.git (push)
+
+Adyaksa Pungkas@PUNGKAS /e/skripsiproject/Pungkas (develop)
+$

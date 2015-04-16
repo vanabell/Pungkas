@@ -1,0 +1,80 @@
+<html>
+<script type="text/javascript">
+$(function() {
+    $( "#tgl-agenda" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
+});
+</script>
+<div class="panel panel-info">
+<div class="panel-heading"><i class="glyphicon glyphicon-dashboard"></i><b>ADD NEW LAPORAN</b></center></div>
+</br>
+<form class="form-horizontal" role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<?php 
+		if($this->message!=''){ ?>
+			<div class="alert alert-danger"><?php echo $this->message;?></div>
+	<?php 
+		}
+	?>
+	<?php 
+		if($this->msg!=''){ ?>
+			<div class="alert alert-success"><?php echo $this->msg;?></div>
+	<?php 
+		}
+	?>
+<div style="width:800px;margin-left: auto;margin-right: auto;text-align: left;">
+  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">Nama Laporan</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="nama" name="nama">
+	    </div>
+  </div>
+  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">Bulan</label>
+	    <div class="col-sm-10">
+	    <select class="form-control" id="bulan" name="bulan">
+	    	<option value="null">Pilih</option>
+	    	<option value="Januari">Januari</option>
+	    	<option value="Februari">Februari</option>
+	    	<option value="Maret">Maret</option>
+	    	<option value="April">April</option>
+	    	<option value="Mei">Mei</option>
+	    	<option value="Juni">Juni</option>
+	    	<option value="Juli">Juli</option>
+	    	<option value="Agustus">Agustus</option>
+	    	<option value="September">September</option>
+	    	<option value="Oktober">Oktober</option>
+	    	<option value="November">November</option>
+	    	<option value="Desember">Desember</option>
+	    </select>
+	    </div>
+  </div>
+   <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">Tahun</label>
+	    <div class="col-sm-10">
+	      <select class="form-control" id="tahun" name="tahun">
+	      <?php for($i=2015;$i<=2060;$i++){?>
+	      	<option value="<?php echo $i;?>"><?php echo $i;?></option>
+	      <?php }?>
+	    </select>
+	    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Laporan Detail</label>
+     <div class="col-sm-10">
+     	<textarea id="tos" name="tos"></textarea>
+						<script type="text/javascript">
+							CKEDITOR.replace( 'tos',  {
+	allowedContent: true
+} );
+						</script>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Save</button>
+       <button type="reset" class="btn btn-default" onclick="window.location='<?php echo $this->baseUrl();?>/admin/agenda/index'">Cancel</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</html>

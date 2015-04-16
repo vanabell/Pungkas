@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrator</title>
+
+    
+	<link href="<?php echo $this->baseUrl();?>/javascript/chosen/chosen.min.css" media="screen" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link href="<?php  echo $this->baseUrl();?>/styles/todc/css/bootstrap.min.css" rel="stylesheet">
+    <!-- TODC Bootstrap theme -->
+    <link href="<?php  echo $this->baseUrl();?>/styles/todc/css/todc-bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="<?php  echo $this->baseUrl();?>/themes/todc/js/html5shiv.js"></script>
+      <script src="<?php  echo $this->baseUrl();?>/themes/todc/js/respond.min.js"></script>
+    <![endif]-->
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <script src="<?php  echo $this->baseUrl();?>/styles/todc/js/jquery1-11-0.min.js"></script>
+    <script src="<?php  echo $this->baseUrl();?>/styles/todc/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/javascript/chosen/chosen.jquery.min.js"></script>
+	
+	
+  </head>
+  <body>
+ 
+  <form method="POST" >
+  	<div style="width:300px;border:1px solid #DDD;margin:200px auto;padding: 10px">
+  		<div style="padding: 5px;background: #2d87e2;font-size: 15px"><b>Login Administrator</b></div>
+  		<div style="padding:10px">
+		  	 <div class="input-group">
+		  		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		  		<input type="text" class="form-control" name="username" placeholder="Username">
+			</div>
+			<br>
+			<div class="input-group">
+		  		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		  		<input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+		</div>
+		<div style="padding: 3px;text-align: center ">
+				<button type="submit" class="btn btn-primary">Login</button>
+		</div>
+		<?php 
+		if($this->message!=''){ ?>
+			<div class="alert alert-danger"><?php echo $this->message;?></div>
+	<?php 
+		}
+	?>
+	</div>
+	</form>
+	
+  </body>
+<script>
+$('#password').numeric();
+</script>
+</html>
